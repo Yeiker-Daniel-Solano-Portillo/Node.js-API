@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GameScout - Buscador de Precios de Videojuegos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🎮 GameScout</h1>
+        <p class="subtitle">
+          Encuentra los mejores precios de videojuegos en tiendas legales
+        </p>
+      </header>
+
+      <main>
+        <div class="search-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Ej: Call of Duty, GTA V, Minecraft..."
+            />
+            <button class="search-btn" onclick="searchGame()">
+              🔍 Buscar Precios
+            </button>
+          </div>
+        </div>
+
+        <div id="loading" class="loading hidden">
+          <p>Buscando precios...</p>
+        </div>
+
+        <div id="results" class="results"></div>
+      </main>
+
+      <footer>
+        <p>&copy; 2024 GameScout - Proyecto SENA</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

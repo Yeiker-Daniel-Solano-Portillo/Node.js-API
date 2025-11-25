@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dependencias
 node_modules/
 npm-debug.log*
@@ -24,13 +25,37 @@ pids
 # Coverage directory used by tools like istanbul
 coverage/
 .nyc_output/
+=======
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+>>>>>>> d0c4d9181b37da63e20cfb8e77d8bec04e43d344
 
 # IDE
 .vscode/
 .idea/
+<<<<<<< HEAD
 *.swp
 *.swo
 
 # OS
 .DS_Store
 Thumbs.db
+=======
+
+# Build
+dist/
+build/
+>>>>>>> d0c4d9181b37da63e20cfb8e77d8bec04e43d344
