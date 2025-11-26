@@ -89,23 +89,27 @@ function displayResults(games) {
  * @returns {HTMLElement} - Elemento HTML del juego
  */
 function createGameElement(game) {
-  const gameDiv = document.createElement("div");
-  gameDiv.className = "game-card";
+    const gameDiv = document.createElement('div');
+    gameDiv.className = 'game-card';
 
-  // Formatear el precio más bajo
-  const cheapestPrice = game.cheapest ? `$${game.cheapest}` : "No disponible";
+    // Formatear el precio más bajo - manejar undefined
+    const cheapestPrice = game.cheapest ? `$${parseFloat(game.cheapest).toFixed(2)}` : "No disponible";
+    const gameName = game.external || "Nombre no disponible";
 
-  gameDiv.innerHTML = `
-        <h2 class="game-title">${game.external || "Nombre no disponible"}</h2>
+    gameDiv.innerHTML = `
+        <div class="game-header">
+            <h2 class="game-title">${gameName}</h2>
+        </div>
         <div class="price-list">
-            <div class="price-item">
+            <div class="price-item ${game.cheapest ? 'highlight' : ''}">
                 <span class="store-name">Precio más bajo:</span>
-                <span class="price">${cheapestPrice}</span>
+                <span class="price ${game.cheapest ? 'best-price' : ''}">${cheapestPrice}</span>
             </div>
         </div>
+        ${game.cheapest ? '<button class="buy-button" onclick="alert(\'Redirigiendo a la tienda...\')">🛒 Ver Oferta</button>' : ''}
     `;
 
-  return gameDiv;
+    return gameDiv;
 }
 
 /**
